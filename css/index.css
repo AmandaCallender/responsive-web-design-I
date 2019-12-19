@@ -148,60 +148,61 @@ h5 {
 
 /* Copy and paste your work from yesterday here and start to refactor into flexbox */
 
-.navigation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.container {
+  max-width: 880px;
+  margin: 0 auto;
 }
-.navigation a {
-  padding: 2%;
+
+.container header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.container header a {
   color: gray;
   text-decoration: none;
-  justify-content: space-evenly;
-}
-.navigation div {
-  padding: 2%;
 }
 
-header {
+.container header img {
+  margin-left: 20%;
+}
+
+.mid-header {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-header img {
+.mid-header img {
   padding: 3%;
 }
 
-header div {
+.mid-header div {
   font-size: 70px;
   width: 30%;
   text-align: center;
 }
 
-header button {
+.mid-header button {
   background: white;
   padding: 9px 50px;
   border: 1px solid;
   font-size: 16px;
 }
 
-hr {
-  border: none;
-  width: 950px;
-  height: 1px;
-  color: #333;
-  background-color: #333;
-}
-.none {
-  visibility: hidden;
-}
-
 .top-content {
+  border-top: 1px solid black;
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 100%;
 }
 
 .top-content div {
@@ -211,8 +212,7 @@ hr {
 
 .middle-image {
   display: flex;
-  margin-left: 475px;
-  margin-right: auto;
+  width: 100%;
   padding: 10px;
 }
 
@@ -220,7 +220,8 @@ hr {
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 100%;
+  border-bottom: 1px solid black;
 }
 
 .bottom-content div {
@@ -231,13 +232,12 @@ hr {
 .Contact {
   display: flex;
   flex-direction: column;
-  margin-left: 479px;
-  margin-right: auto;
   width: 50%;
+  padding: 2%;
 }
 
-space {
-  visibility: hidden;
+.Contact p {
+  margin: 15px 0;
 }
 
 footer {
@@ -256,12 +256,72 @@ footer {
 }
 
 @media (max-width: 800px) {
-  header img {
+  .container {
+    width: 80%; 
+  }
+  .container header {
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    align-items: space-evenly;
+    justify-content: center;
+    margin: 1%;
+  }
+
+  .container header a {
+    padding: 2%;
+  }
+
+  .container header img {
+    margin-left: 35%;
+    margin-right: 35%;
+    padding: 2%;
+  }
+
+  .mid-header {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    justify-content: center;
+    align-items: center;
+ 
+  }
+
+  .mid-header img {
     display: none;
-  }
-  nav {
-    justify-content: space-between;
-  }
 }
+
 @media (max-width: 500px) {
+  .container {
+    width: 50%; 
+    margin: 0 10%;
+  }
+
+  .container header {
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    align-items: space-around;
+    justify-content: center;
+  }
+
+  #header-nav a {
+    border-bottom: 1px gray solid;
+    width: 100%;
+  }
+
+  .container header img {
+    padding: 2%;
+    border-bottom: 1px gray solid;
+
+  }
+
+  .container .mid-header {
+    justify-content: center;
+    align-items: center;
+   
+  }
+
+  .container .mid-header img {
+    display: none;
+}
+
+.container 
 }
