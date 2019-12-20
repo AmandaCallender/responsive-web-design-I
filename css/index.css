@@ -1,5 +1,10 @@
 /* Use your own code or past solution for Great Idea Web Page CSS here! */
 
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
 html,
 body,
 div,
@@ -146,7 +151,15 @@ h5 {
   margin-bottom: 15px;
 }
 
-/* Copy and paste your work from yesterday here and start to refactor into flexbox */
+/* General Styles */
+* {
+  font-family: "Titillium Web", sans-serif;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.25;
+}
 
 .container {
   max-width: 880px;
@@ -154,205 +167,245 @@ h5 {
 }
 
 .container header {
+  top: 0;
+  padding: 30px 5px 10px 5px;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 30px;
 }
 
 .container header nav {
+  color: lightgray;
   display: flex;
+  flex-grow: 1;
   justify-content: space-between;
   align-items: center;
-  flex-grow: 1;
-}
-
-.container header a {
-  color: gray;
-  text-decoration: none;
 }
 
 .container header img {
-  margin-left: 20%;
+  margin-left: 90px;
 }
 
-.mid-header {
+.container header nav a {
+  text-decoration: none;
+  color: lightgray;
+}
+
+.container footer {
+  text-align: center;
+  margin: 100px 0 20px 0;
+}
+
+.container section {
+  margin-bottom: 30px;
+}
+
+.main-content {
+  width: 100%;
+  border-top: 1.5px solid black;
+  border-bottom: 1.5px solid black;
+}
+
+/* Home Styles */
+.index .head {
   display: flex;
+  justify-content: space-between;
+}
+
+.index .head-text {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.mid-header img {
-  padding: 3%;
-}
-
-.mid-header div {
-  font-size: 70px;
-  width: 30%;
+.index h1 {
+  font-size: 4em;
   text-align: center;
 }
 
-.mid-header button {
-  background: white;
-  padding: 9px 50px;
-  border: 1px solid;
-  font-size: 16px;
+.index button {
+  font-size: 100%;
+  width: 170px;
+  padding: auto 45px;
 }
 
-.top-content {
-  border-top: 1px solid black;
+.index .top {
+  padding: 35px 0px 29px 0px;
   display: flex;
-  margin-left: auto;
-  margin-right: auto;
+  justify-content: space-between;
+}
+
+.main-content .middle-img {
   width: 100%;
 }
 
-.top-content div {
-  width: 49%;
-  padding: 1%;
-}
-
-.middle-image {
+.index .bottom-content {
+  padding: 30px 0;
   display: flex;
-  width: 100%;
-  padding: 10px;
+  justify-content: space-between;
 }
 
-.bottom-content {
+.index .text-content {
+  padding-right: 20px;
+}
+
+.index .contact p {
+  margin: 13px 0px;
+}
+
+/* Services Styles */
+.services .introduc img {
+  margin-bottom: 20px;
+}
+
+.services .main {
   display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  border-bottom: 1px solid black;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 30px;
 }
 
-.bottom-content div {
-  width: 32%;
-  padding: 2%;
+.services .item {
+  width: 48%;
+  border: 1.5px solid black;
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f4f3f4;
 }
 
-.Contact {
+.services .learn-button {
   display: flex;
-  flex-direction: column;
-  width: 50%;
-  padding: 2%;
-}
-
-.Contact p {
-  margin: 15px 0;
-}
-
-footer {
-  text-align: center;
-  padding: 25px;
-}
-
-.BoxGrids {
-  display: flex;
-}
-
-.servicesheader {
-  display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  border: 1.5px solid black;
+  border-radius: 5px;
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  margin-top: 20px;
 }
 
-@media (max-width: 800px) {
+.services ul {
+  margin: 10px 0px 10px 25px;
+}
+.services li {
+  list-style-type: square;
+  margin-top: 10px;
+}
+
+.services .facts {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Responsive*/
+@media only screen and (max-width: 800px) {
   .container {
-    width: 80%; 
+    width: 95%;
   }
   .container header {
     flex-direction: column-reverse;
-    flex-wrap: wrap;
-    align-items: space-evenly;
-    justify-content: center;
-    margin: 1%;
-  }
-
-  .container header a {
-    padding: 2%;
+    align-items: center;
+    margin-bottom: 30px;
   }
 
   .container header img {
-    margin-left: 35%;
-    margin-right: 35%;
-    padding: 2%;
+    margin: 0;
+    padding-left: 16px;
   }
 
-  .mid-header {
-    margin-top: 10%;
-    margin-bottom: 10%;
-    justify-content: center;
-    align-items: center;
+  .container header nav {
+    margin: 39px 0px;
+    padding: 0px 25px 0px 10px;
+    align-self: stretch;
   }
 
-  .mid-header img {
+  .index .head img {
     display: none;
+  }
+
+  .index .head .head-text {
+    width: 100%;
+    padding-left: 20px;
+  }
+
+  .index .head-text button {
+    margin-top: 10px;
+  }
+
+  .index .main-content .text-content {
+    padding-left: 12px;
+  }
+
+  .worker {
+    display: none;
+  }
 }
+/* Phone*/
 
-@media (max-width: 500px) {
+@media only screen and (max-width: 500px) {
   .container {
-    width: 100%; 
-    
+    width: 100%;
   }
-
-  .container header {
-    flex-direction: column-reverse;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    width: 150%;
-  }
-
   .container header nav {
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
-    width: 500px;
-    text-align: center;
-    padding: 3%;
   }
 
-  /* #header-nav a {
-    border-bottom: 1px gray solid;
-    border-top: 1px gray solid;
-    width: 100%;
-  } */
+  .container header {
+    margin-top: 20px;
+    margin-bottom: 12px;
+    font-size: 1.22em;
+  }
 
- /* .container header img {
-    margin-right: 0 auto;
-    margin-left: 0;
+  .container header .fa {
+    display: inline-block;
+  }
+
+  .container header nav a {
+    align-self: stretch;
     text-align: center;
-  } */
+    border-top: 1px solid black;
+    padding: 20px;
+    padding-left: 47px;
+  }
 
-   .mid-header {
-    justify-content: center;
-    align-items: center;
+  .main-content .top-content,
+  .main-content .bottom-content {
+    flex-direction: column;
+    padding-left: 10px;
+  }
+
+  .main-content .text-content {
+    margin-top: 26px;
+    margin-bottom: 18px;
+  }
+
+  .main-content .bottom-content .text-content {
+    margin-top: 0px;
+    margin-bottom: 58px;
+  }
+
+  .contact {
+    padding-left: 20px;
+  }
+
+  .services {
+    width: 96%;
+  }
+
+  .services .main-items {
     width: 100%;
   }
 
-   .mid-header img {
+  .footer {
+    padding-left: 20px;
+  }
+  .worker {
     display: none;
-  }
-
-   .mid-header {
-    width: 500px;
-    padding: 0; 
-  }
-  .container .top-content {
-    flex-direction: column;
-    align-items: center;
-    width: 500px;
-    margin: auto;
-    padding: -1%;
-  }
-
-  .container .middle-image {
-    width: 500px;
-    padding: -10px;
-  }
-  .container .bottom-content {
-    width: 415px;
-    padding: 0; 
-    flex-direction: column;
-    align-items: center;
   }
 }
